@@ -1,26 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react';
+import {CounterComponent} from "./counterBlock/CounterComponent";
+import {SettingComponent} from "./settingBlock/SettingComponent";
+import s from "./counterBlock/Counter.module.css";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+
+    let [value, setValue] = useState(0);
+    let [resetValue, setFirstStartValue] = useState(0);
+
+
+    function incValue() {
+        setValue(value + 1);
+    }
+
+    function setStartValue(startValue: string) {
+        setValue(Number(startValue))
+    }
+
+    function setFirstStart(startValue: string) {
+        setFirstStartValue(Number(startValue))}
+
+    function resetButtonValue(){
+                 setValue(resetValue)
+    }
+
+
+    return (
+        <div className={s.windowBlock}>
+            <SettingComponent setStartValue={setStartValue}
+                              setFirstStart={setFirstStart}/>
+            <CounterComponent incValue={incValue}
+                              resetButtonValue={resetButtonValue}
+                              value={value}
+
+            />
+        </div>
+    )
 }
 
 export default App;
