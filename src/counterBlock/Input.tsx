@@ -10,7 +10,8 @@ maxValue: SetValueType
 export const Input = (props: InputPropsType) => {
     return (
         <div className={s.valueBlock}>
-            <div className={props.value===props.maxValue? s.redValue:s.value}> {
+            <div className={(props.value===props.maxValue)
+            ||(props.value ==='Incorrect value!')? s.redValue:s.value}> {
                 props.value === "" ? "enter values and press set" : props.value
             }
             </div>
