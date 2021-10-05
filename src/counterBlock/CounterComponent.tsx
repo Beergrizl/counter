@@ -18,7 +18,7 @@ export const CounterComponent = (props: CounterComponentPropsType) => {
         <div className={s.counterBlock}>
             <Input value={props.value}
                    maxValue={props.maxValue}
-                   />
+            />
             <Button incValue={props.incValue}
                     resetButtonValue={props.resetButtonValue}
                     value={props.value}

@@ -13,16 +13,18 @@ export type ButtonPropsType = {
 export const Button = (props: ButtonPropsType) => {
 
     let incButtonValue = (props.value === props.maxValue)
-    || (props.value ==="");
+        || (props.value === "");
     let resButtonValue = (props.value === props.resetValue)
-        || (props.value ==="")
+        || (props.value === "")
 
     return (
         <div className={s.buttonBlock}>
             <button onClick={props.incValue} className={s.button}
-                    disabled={incButtonValue}>inc</button>
+                    disabled={incButtonValue}>inc
+            </button>
             <button onClick={props.resetButtonValue} className={s.button}
-            disabled={resButtonValue}>reset</button>
+                    disabled={resButtonValue}>reset
+            </button>
         </div>
     );
 }
